@@ -1,0 +1,118 @@
+from googletrans import Translator
+
+translater = Translator()
+
+txt = str(input('enter the text :- ').lower())
+
+
+
+print('''
+languages available for translation :-
+
+english
+arabic
+bengali
+simplified chinese
+traditional chinese
+dutch
+french
+german
+hindi
+japanese
+marathi
+nepali
+odia
+polish
+punjabi
+russian
+spanish
+tamil
+telugu
+urdu
+greek
+''')
+
+
+
+a = translater.detect(txt)
+print('language detected:- ',a.lang)
+
+inpt = str(input('which language would you like to translate to? '))
+
+
+
+
+if inpt == 'english':
+    translater.translate(txt,dest='en')
+
+elif inpt == 'arabic' :
+    translater.translate(txt,dest='ar')
+
+elif inpt == 'bengali':
+    translater.translate(txt,dest='bn')
+
+elif inpt == 'traditional chinese':
+    translater.translate(txt,dest='zh-tw')
+
+elif inpt == 'simplified chinese':
+    translater.translate(txt,dest='zh-cn')
+
+elif inpt == 'dutch':
+    translater.translate(txt,dest='nl')
+
+elif inpt == 'french':
+    translater.translate(txt,dest='fr')
+
+elif inpt == 'german':
+    translater.translate(txt,dest='de')
+
+elif inpt == 'hindi':
+    translater.translate(txt,dest='hi')
+
+elif inpt == 'japanese':
+    translater.translate(txt,dest='ja')
+
+elif inpt == 'marathi':
+    translater.translate(txt,dest='mr')
+
+elif inpt == 'nepali':
+    translater.translate(txt,dest='ne')
+
+elif inpt == 'odia':
+    translater.translate(txt,dest='or')
+
+elif inpt == 'polish':
+    translater.translate(txt,dest='pl')
+
+elif inpt == 'punjabi':
+    translater.translate(txt,dest='pa')
+
+elif inpt == 'russian':
+    translater.translate(txt,dest='ru')
+
+elif inpt == 'spanish':
+    translater.translate(txt,dest='es')
+
+elif inpt == 'tamil':
+    translater.translate(txt,dest='ta')
+
+elif inpt == 'telugu':
+    translater.translate(txt,dest='te')
+
+elif inpt == 'urdu':
+    translater.translate(txt,dest='ur')
+
+elif inpt == 'greek':
+    translater.translate(txt,dest='el')
+
+else:
+    print("language is not available for translation")
+
+
+
+
+out = translater.translate(txt,dest=inpt)
+
+# print('translation:- \n', out)
+
+print('translation:- \n', out.text)
